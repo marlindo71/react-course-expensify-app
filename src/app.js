@@ -11,15 +11,6 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-
-store.dispatch(addExpense({description: 'Marlon', amount: 1500, createdAt: 1 }));
-store.dispatch(addExpense({description: 'MLuana', amount: 300, createdAt: 2 }));
-store.dispatch(setTextFilter(''));
-
-const state = store.getState();
-const visible = getVisibleExpenses(state.expenses, state.filters);
-console.log(visible);
-
 const jsx = (
     <Provider store={store}>
         <AppRouter />
